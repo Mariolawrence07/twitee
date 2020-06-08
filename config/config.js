@@ -19,7 +19,7 @@ const config = {
     ...databaseEnvDetails,
   },
   production: {
-    DATABASE_URL: process.env.DATABASE_URL,
+    database: process.env.DATABASE_URL,
     ...databaseEnvDetails,
   },
 };
