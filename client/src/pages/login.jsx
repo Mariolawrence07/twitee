@@ -19,7 +19,7 @@ const Login = (props) => {
       if (data) {
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("id", data.data.id);
-        history.push("/");
+        history.push("/post");
       } else {
         setIsLoading(false);
       }
@@ -126,7 +126,7 @@ const Login = (props) => {
             <div className="d-flex justify-content-between text-off-black font-size-below">
               <span>
                 New to <strong>Twitee</strong>?{" "}
-                <Link to="/register" className="font-weight-bolder">
+                <Link to="/" className="font-weight-bolder">
                   Sign up
                 </Link>
               </span>

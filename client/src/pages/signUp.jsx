@@ -18,7 +18,7 @@ const Signup = (props) => {
       if (data) {
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("id", data.data.id);
-        history.push("/");
+        history.push("/post");
       } else {
         setIsLoading(false);
       }

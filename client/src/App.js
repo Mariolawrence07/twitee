@@ -10,14 +10,15 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <LandingPage />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
           <Signup />
         </Route>
+        <Route path="/post">
+          <LandingPage />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+
         <Route path="/post/:id">
           <PostDetail />
         </Route>
