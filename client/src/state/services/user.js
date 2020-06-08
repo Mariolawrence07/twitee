@@ -17,11 +17,7 @@ const signUp = async (values) => {
       "Content-Type": "application/json",
     },
   };
-  const { status, data } = await axios.post(
-    `http://localhost:3001/register`,
-    values,
-    config
-  );
+  const { status, data } = await axios.post(`/register`, values, config);
   if (status === 201) {
     return data;
   } else {
@@ -38,11 +34,7 @@ const login = async (values) => {
       "Content-Type": "application/json",
     },
   };
-  const { status, data } = await axios.post(
-    `http://localhost:3001/login`,
-    values,
-    config
-  );
+  const { status, data } = await axios.post(`/login`, values, config);
   if (status === 200) {
     return data;
   } else {
@@ -57,10 +49,7 @@ const getPosts = async () => {
       token: localStorage.getItem("token"),
     },
   };
-  const { status, data } = await axios.get(
-    `http://localhost:3001/post`,
-    config
-  );
+  const { status, data } = await axios.get(`/post`, config);
   if (status === 200) {
     return data;
   } else {
@@ -75,10 +64,7 @@ const getSinglePost = async (id) => {
       token: localStorage.getItem("token"),
     },
   };
-  const { status, data } = await axios.get(
-    `http://localhost:3001/post/${id}`,
-    config
-  );
+  const { status, data } = await axios.get(`/post/${id}`, config);
   if (status === 200) {
     return data;
   } else {
@@ -94,7 +80,7 @@ const postComment = async (id, values) => {
     },
   };
   const { status, data } = await axios.post(
-    `http://localhost:3001/post/comment/${id}`,
+    `/post/comment/${id}`,
     values,
     config
   );
@@ -112,11 +98,7 @@ const postLike = async (id) => {
       token: localStorage.getItem("token"),
     },
   };
-  const { status, data } = await axios.post(
-    `http://localhost:3001/post/like/${id}`,
-    {},
-    config
-  );
+  const { status, data } = await axios.post(`/post/like/${id}`, {}, config);
   if (status === 201) {
     return data;
   } else {
@@ -131,11 +113,7 @@ const addPost = async (values) => {
       token: localStorage.getItem("token"),
     },
   };
-  const { status, data } = await axios.post(
-    `http://localhost:3001/post`,
-    values,
-    config
-  );
+  const { status, data } = await axios.post(`/post`, values, config);
   if (status === 201) {
     return data;
   } else {
@@ -150,10 +128,7 @@ const removePost = async (id) => {
       token: localStorage.getItem("token"),
     },
   };
-  const { status, data } = await axios.delete(
-    `http://localhost:3001/post/${id}`,
-    config
-  );
+  const { status, data } = await axios.delete(`/post/${id}`, config);
   if (status === 200) {
     return data;
   } else {
